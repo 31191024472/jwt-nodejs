@@ -1,0 +1,5 @@
+// dùng đẻ định nghĩa cấc file mà chúng ta không muốn đẩy lên github
+
+.env
+node_modules
+node_modules/*

@@ -1,0 +1,7 @@
+// dùng để biên dịch code 
+
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
