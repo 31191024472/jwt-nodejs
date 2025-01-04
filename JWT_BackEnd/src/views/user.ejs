@@ -53,8 +53,8 @@
                       <th scope="row"><%= index + 1 %></th>
                       <td><%= item.username %></td>
                       <td><%= item.email %></td>
-                      <td>
-                        <a  style="display: inline;" class="btn btn-warning" href="/user/update-user/<%= item.id%>" >
+                      <td >
+                        <a  style="display: inline; margin-right:5px;" class="btn btn-warning" href="/user/update-user/<%= item.id%>" >
                           Edit
                         </a>
                         <form style="display: inline;" action="/deletUser/<%= item.id%>" method="post">

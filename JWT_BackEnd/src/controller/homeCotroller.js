@@ -19,17 +19,24 @@ const handleCreateUser = async (req,res) =>{
 }
 const handleDeleteUser = async (req,res) =>{
     await userService.deletUser(req.params.id);
+    return res.redirect('/user')
+
 }
 
-const handleGetDateUser = async (req,res) => {
+const handleGetDateUser = async (req, res) => {
     let id = req.params.id;
     let user = await userService.getUserById(id);
-    let userData = {};
-    if(user && user.length >0 ) {
-        userData = user[0]
+    
+    // Kiểm tra xem người dùng có được tìm thấy không
+    if (!user) {
+      return res.status(404).send('User not found'); // Hoặc xử lý lỗi theo cách khác
     }
-    return await res.render('user-update.ejs', {userData});
-}
+  
+    let userData = user; // Không cần truy cập phần tử đầu tiên
+  
+    return res.render('user-update.ejs', { userData });
+  }
+  
 
 const handleUpDateUser = async(req,res) =>{
     let email = req.body.email
